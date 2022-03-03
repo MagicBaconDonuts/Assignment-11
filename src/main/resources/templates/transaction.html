@@ -1,0 +1,24 @@
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Transaction</title>
+	</head>
+	<body>
+		<div th:each="storedTran : ${transaction}">
+			<h2 th:inline="text">Transaction ID: [[${storedTran.id}]] 
+				<span th:utext="${storedTran.type == 'C'} ? '(Credit)' : '(Debit)'"></span>
+			</h2>
+		<div>
+			<span>Date: [[${storedTran.date}]]</span>
+		</div>
+		<div>
+			<span>Amount: [[${storedTran.amount}]]</span>
+		</div>
+		<div>
+			<span>Description: [[${storedTran.description}]]</span>
+		</div>
+		<div>
+			<a th:href="@{/transactions}">Back</a>
+		</div>
+		</div>
+	</body>
+</html>
