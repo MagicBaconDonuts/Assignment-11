@@ -11,7 +11,7 @@
 			<span>Date: [[${storedTran.date}]]</span>
 		</div>
 		<div>
-			<span>Amount: [[${storedTran.amount}]]</span>
+			Amount: <span th:text="${storedTran.type == 'C' ? '-' + storedTran.amount : storedTran.amount}"></span>
 		</div>
 		<div>
 			<span>Description: [[${storedTran.description}]]</span>
